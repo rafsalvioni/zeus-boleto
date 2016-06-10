@@ -83,8 +83,8 @@ class FichaCompensacao
         $render = new FpdfRenderer();
         $x      = $pdf->GetX();
         $y      = $pdf->GetY();
-        $render->offsetTop  = (int)$render->convertFromResource($y + 2, 'px');
-        $render->offsetLeft = (int)$render->convertFromResource($x, 'px');
+        $render->offsetTop  = (int)$render->convertValueTo($y + 2, 'px');
+        $render->offsetLeft = (int)$render->convertValueTo($x, 'px');
         $render->setResource($pdf);
         $bc->draw($render);
     }
